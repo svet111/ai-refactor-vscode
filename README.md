@@ -13,17 +13,35 @@ An AI-powered VSCode extension that analyzes and improves Python code using LLMs
 - OpenAI GPT-4.1
 
 ## Setup
-  1. Backend
-     
-  - pip install -r requirements.txt
-  - uvicorn api:app --reload
-  
-  2. Extension
-  
-  - cd extension
-  - npm install
-  - npm run compile
+### 1. Backend
 
-  Then open in VSCode → press F5
+```bash
+cd server
+pip install -r requirements.txt
+uvicorn api:app --reload
+```
+### 2. Extention
 
-* for work add your API as in .env.example
+```bash
+cd extension
+npm install
+npm run compile
+```
+## API Key
+Create .env file:
+```bash
+OPENAI_API_KEY=your_key_here
+```
+## Usage
+1. Open Python file in VSCode
+2. Run command:
+```bash
+AI: Refactor Code
+```
+4. See suggestions in panel
+   
+## Future Work
+- Inline suggestions (Copilot-style)
+- Multi-language support
+- Diff view instead of text
+- GitHub PR integration
